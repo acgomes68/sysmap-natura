@@ -1,3 +1,5 @@
+import config from '../../config';
+
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
@@ -22,9 +24,10 @@ interface Data {
 const Repo: React.FC = () => {
   const { username, reponame } = useParams();
   const [data, setData] = useState<Data>();
+  const uri = config.API_GITHUB_URI;
 
   useEffect(() => {
-    fetch(`https://api.github.com/repos/${username}/${reponame}`).then(
+    fetch(`${uri}/repos/${username}/${reponame}`).then(
       async (response) => {
         setData(
           response.status === 404

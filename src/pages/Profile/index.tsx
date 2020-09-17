@@ -1,3 +1,5 @@
+import config from '../../config';
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -25,13 +27,14 @@ interface Data {
 }
 
 const Profile: React.FC = () => {
-  const { username = 'guilhermerodz' } = useParams();
+  const { username = config.API_GITHUB_USERNAME } = useParams();
   const [data, setData] = useState<Data>();
+  const uri = config.API_GITHUB_URI;
 
   useEffect(() => {
     Promise.all([
-      fetch(`https://api.github.com/users/${username}`),
-      fetch(`https://api.github.com/users/${username}/repos`),
+        fetch(`${uri}/users/${username}`),
+        fetch(`${uri}/users/${username}/repos`),
     ]).then(async (responses) => {
       const [userResponse, reposResponse] = responses;
 
