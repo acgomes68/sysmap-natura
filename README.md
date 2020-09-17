@@ -1,13 +1,18 @@
-# inovation-rojemac-test
-Avaliação aplicada no processo seletivo da <b>Inovation</b> para uma vaga de <b>Desenvolvedor Python</b> na <b>Rojemac</b>.
+# sysmap-natura-test
+Avaliação aplicada no processo seletivo da <b>SysMap</b> para uma vaga de <b>Desenvolvedor Fullstack</b> na <b>Natura</b>.
 <br /><br />
 
 ## Descrição
-O projeto envolve a criação de <b>serviços RESTful</b> responsáveis pelo CRUD de clientes pessoaa jurídica e uma interface amigável para essa gestão. Como funcionalidades adicionais, a possibilidade de pesquisa por CNPJ e/ou Nome (Razão Social) através de AutoComplete e busca das informações cadastrais através de uma API específica.
+O projeto envolve a criação de uma interface Web Responsiva em ReactJS que liste todos os repositórios públicos de uma determinado usuário utilizando a API pública do próprio GitHub acionada via serviço RESTfull desenvolvido em Node.js.
+
+Para tal, há a possibilidade da instalação do código e execução de forma local ou simplemsmente executá-lo sem necessidade de instalação através do endpoint:
+
+https://sysmap-natura.netlify.app/
+
 <br /><br />
 
 ## Requisitos
-Para que seja realizada a instalação, construção, execução e testes são necessárias as seguintes tecnologias previamente instaladas que devem ser verificadas através do <b>terminal(Linux/MacOS)</b> ou <b>CommandShell/CMD/PowerShell (Windows)</b>:
+Para que seja realizada a instalação, construção, execução e testes de forma local são necessárias as seguintes tecnologias previamente instaladas que devem ser verificadas através do <b>terminal(Linux/MacOS)</b> ou <b>CommandShell/CMD/PowerShell (Windows)</b>:
 
 - <b>Git</b>
 
@@ -50,15 +55,17 @@ https://docs.docker.com/compose/install/
 <br /><br />
 
 ## Arquitetura
-Foi desenvolvida uma arquitetura voltada para microsserviços com os serviços separados em containers Docker que podem ser escalados mediante a demanda necessária. A estrutura básica do backend foi desenvolvida em NodeJS com Express, ambos responsáveis pela gestão e roteamento das requisições HTTP usando REST.
-Foi criada uma pequena estrutura de dados relacionais com Postgres também alocado em um container específico responsável por armazenar as informações.
-No que tange ao frontend foi criada uma interface em React responsável por consumir os serviços citados.
+Foi desenvolvida uma arquitetura voltada para microsserviços de modo que estejam separados em containers Docker que podem ser escalados mediante a demanda necessária. A estrutura básica do backend foi desenvolvida em NodeJS com Express, ambos responsáveis pela gestão e roteamento das requisições HTTP usando padrão REST.
+
+As informações dos repositórios provenientes do GitHub é consumida através da chamada de API própria de domínio público acessada pelo backend.
+
+No que tange ao frontend foi criada uma interface em React estilizada de forma semelhante ao próprio GitHub e responsável por consumir os serviços citados.
 <br /><br />
 
 ## Tecnologias:
 - <b>NodeJS</b>: linguagem Javascript backend voltada para a construção das API's;
-- <b>Postgres</b>: banco de dados relacional utilizado para armazenamento das informações;
 - <b>React</b>: linguagem Javascript frontend voltada para a construção da camada de apresentação;
+- <b>API GitHub</b>: https://developer.github.com/v3/
 <br /><br />
 
 ## Dependências:
@@ -96,9 +103,6 @@ http://localhost:3333/customers
 <code>make test</code>
 <br /><br />
 
-## Modelo de dados
-![Screenshot](der-cliente-pj.png)
-<br /><br />
 
 ## GUI Teste API's
 Foi utilizado o Insomnia para teste manual de cada serviço da API. Arquivo JSON contendo as informações, bem como os parâmetros utilizados disponíveis no repositório para importação, caso seja conveniente.
@@ -107,3 +111,7 @@ Foi utilizado o Insomnia para teste manual de cada serviço da API. Arquivo JSON
 <br /><br />
 
 ## Referências
+- https://stackoverflow.com/questions/8713596/how-to-retrieve-the-list-of-all-github-repositories-of-a-person#:~:text=15%20Answers&text=You%20can%20use%20the%20github,repositories%20for%20the%20user%20USERNAME.&text=to%20find%20all%20the%20user's%20repos.
+- https://www.youtube.com/watch?v=iLEbGQXsg3k
+- https://blog.crowdbotics.com/how-to-connect-a-github-api-with-a-nodejs-server/
+- https://medium.com/@rshekar/creating-a-react-web-app-on-netlify-and-github-part-1-5c802dd52354
