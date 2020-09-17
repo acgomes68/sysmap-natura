@@ -1,6 +1,11 @@
 {
-  "name": "sysmap-natura-github",
+  "name": "sysmap-natura",
   "version": "0.1.0",
+  "description": "Acesso aos repositórios do GitHub",
+  "author": {
+    "name": "Antonio Carlos Gomes",
+    "email": "acgomes68@gmail.com"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
