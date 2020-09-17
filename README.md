@@ -89,7 +89,7 @@ No que tange ao frontend foi criada uma interface em React estilizada de forma s
 
 ## Instalação
 
-Atualizar as informações no arquivo .env.example e renomeá-lo para .env. Após isso, através do terminal executar:<br />
+Atualizar as informações no arquivo .env.example e renomeá-lo para .env. Após isso, considerando que exista acesso a Internet pois as dependências serão instaladas, executar através do terminal:<br />
 <code>make install</code><br />
 
 Após o final da instalação, acessar os serviços através do endpoint:<br />
