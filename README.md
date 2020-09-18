@@ -117,9 +117,14 @@ http://localhost:3000/acgomes68
 <br /><br />
 
 ## Funções adicionais
-Está disponível a possibilidade de alternar entre visualização padrão (clara) e Dark Mode (escuro). Basta clicar no ícone do GitHub no canto superior esquerdo.
+Está disponível a possibilidade de **alternar entre visualização padrão (clara) e Dark Mode (escuro)**. Basta clicar no **ícone do GitHub** no canto superior esquerdo.
 
 ![](public/dark-mode.png)
+<br /><br />
+
+Versão **Mobile First**
+![](public/mobile-mode.png)
+
 <br /><br />
 
 
