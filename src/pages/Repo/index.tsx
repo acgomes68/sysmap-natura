@@ -1,7 +1,6 @@
-import config from '../../config';
-
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import config from '../../config';
 
 import {
   Container,
@@ -24,7 +23,7 @@ interface Data {
 const Repo: React.FC = () => {
   const { username, reponame } = useParams();
   const [data, setData] = useState<Data>();
-  const uri = config.API_GITHUB_URI;
+  const uri = config.REACT_APP_GITHUB_URI;
 
   useEffect(() => {
     fetch(`${uri}/repos/${username}/${reponame}`).then(
@@ -32,11 +31,11 @@ const Repo: React.FC = () => {
         setData(
           response.status === 404
             ? { error: 'Repository not found!' }
-            : { repo: await response.json() }
+            : { repo: await response.json() },
         );
-      }
+      },
     );
-  }, [reponame, username]);
+  }, [reponame, username, uri]);
 
   if (data?.error) {
     return <h1>{data.error}</h1>;
@@ -51,13 +50,13 @@ const Repo: React.FC = () => {
       <Breadcrumb>
         <RepoIcon />
 
-        <Link className={'username'} to={`/${username}`}>
+        <Link className="username" to={`/${username}`}>
           {username}
         </Link>
 
         <span>/</span>
 
-        <Link className={'reponame'} to={`/${username}/${reponame}`}>
+        <Link className="reponame" to={`/${username}/${reponame}`}>
           {reponame}
         </Link>
       </Breadcrumb>

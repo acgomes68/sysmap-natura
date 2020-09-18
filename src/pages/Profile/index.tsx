@@ -1,5 +1,3 @@
-import config from '../../config';
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -19,6 +17,7 @@ import RepoCard from '../../components/RepoCard';
 import RandomCalendar from '../../components/RandomCalendar';
 
 import { APIUser, APIRepo } from '../../@types';
+import config from '../../config';
 
 interface Data {
   user?: APIUser;
@@ -27,9 +26,9 @@ interface Data {
 }
 
 const Profile: React.FC = () => {
-  const { username = config.API_GITHUB_USERNAME } = useParams();
+  const { username = config.REACT_APP_GITHUB_USERNAME } = useParams();
   const [data, setData] = useState<Data>();
-  const uri = config.API_GITHUB_URI;
+  const uri = 'https://api.github.com';
 
   useEffect(() => {
     Promise.all([

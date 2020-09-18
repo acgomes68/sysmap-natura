@@ -11,7 +11,8 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - APP_URL=${APP_URL}
-      - API_GITHUB=${API_GITHUB}
+      - REACT_APP_GITHUB_URI=${API_GITHUB_URI}
+      - REACT_APP_GITHUB_USERNAME=${API_GITHUB_USERNAME}
     command: yarn start
     stdin_open: true
     ports:
