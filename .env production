@@ -1,0 +1,6 @@
+# Node settings
+NODE_ENV=production
+
+# GitHub settings
+API_GITHUB_URI=https://api.github.com
+API_GITHUB_USERNAME=acgomes68
