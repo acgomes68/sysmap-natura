@@ -1,9 +1,13 @@
 # sysmap-natura-test
 Avaliação aplicada no processo seletivo da **SysMap** para uma vaga de **Desenvolvedor Fullstack** na **Natura**.
+
+![](public/busca-barra-pesquisa.png)
 <br /><br />
 
 ## Descrição
 O projeto envolve a criação de uma **interface Web Responsiva em ReactJS** que liste todos os repositórios públicos de um determinado usuário utilizando a [API pública do próprio GitHub](https://docs.github.com/en/rest) acionada via serviço **RESTfull** desenvolvido em **Node.js**.
+
+![](public/busca-barra-endereco.png)
 
 Para tal, há a possibilidade da instalação do código e **execução de forma local** ou simplemsmente executá-lo **sem necessidade de instalação** através do endpoint:
 
@@ -110,6 +114,12 @@ http://localhost:3000/acgomes68
 
 ## Testes
 ```make test```
+<br /><br />
+
+## Funções adicionais
+Está disponível a possibilidade de alternar entre visualização padrão (clara) e Dark Mode (escuro). Basta clicar no ícone do GitHub no canto superior esquerdo.
+
+![](public/dark-mode.png)
 <br /><br />
 
 

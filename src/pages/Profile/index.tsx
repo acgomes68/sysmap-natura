@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import config from '../../config';
 
 import {
   Container,
@@ -17,7 +18,6 @@ import RepoCard from '../../components/RepoCard';
 import RandomCalendar from '../../components/RandomCalendar';
 
 import { APIUser, APIRepo } from '../../@types';
-import config from '../../config';
 
 interface Data {
   user?: APIUser;
@@ -26,8 +26,10 @@ interface Data {
 }
 
 const Profile: React.FC = () => {
-  const { username = config.REACT_APP_GITHUB_USERNAME } = useParams();
+  // const { username = config.REACT_APP_GITHUB_USERNAME } = useParams();
+  const { username = 'acgomes68' } = useParams();
   const [data, setData] = useState<Data>();
+  // const uri = config.REACT_APP_GITHUB_URI;
   const uri = 'https://api.github.com';
 
   useEffect(() => {
@@ -53,7 +55,7 @@ const Profile: React.FC = () => {
         repos: slicedRepos,
       });
     });
-  }, [username]);
+  }, [username, uri]);
 
   if (data?.error) {
     return <h1>{data.error}</h1>;

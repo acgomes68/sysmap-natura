@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import config from '../../config';
+// import config from '../../config';
 
 import {
   Container,
@@ -23,7 +23,8 @@ interface Data {
 const Repo: React.FC = () => {
   const { username, reponame } = useParams();
   const [data, setData] = useState<Data>();
-  const uri = config.REACT_APP_GITHUB_URI;
+  // const uri = config.REACT_APP_GITHUB_URI;
+  const uri = 'https://api.github.com';
 
   useEffect(() => {
     fetch(`${uri}/repos/${username}/${reponame}`).then(
