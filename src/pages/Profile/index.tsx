@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import config from '../../config';
+// import config from '../../config';
 
 import {
   Container,
@@ -52,7 +52,8 @@ const Profile: React.FC = () => {
 
       setData({
         user,
-        repos: slicedRepos,
+        // repos: slicedRepos,
+        repos: repos,
       });
     });
   }, [username, uri]);
@@ -89,6 +90,7 @@ const Profile: React.FC = () => {
           <ProfileData
             username={data.user.login}
             name={data.user.name}
+            bio={data.user.bio}
             avatarUrl={data.user.avatar_url}
             followers={data.user.followers}
             following={data.user.following}

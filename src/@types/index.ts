@@ -1,6 +1,7 @@
 export interface APIUser {
   login: string;
   name: string;
+  bio?: string;
   followers: number;
   following: number;
   public_repos: number;
